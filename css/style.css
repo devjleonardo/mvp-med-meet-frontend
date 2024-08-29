@@ -1,0 +1,146 @@
+body,
+html {
+	height: 100%;
+	margin: 0;
+}
+
+#main-content {
+  flex-grow: 1;
+  padding-left: 0;
+}
+
+.container-fluid {
+	flex-grow: 1;
+}
+
+.min-vh-100 {
+	min-height: 100vh;
+}
+
+.bg-dark {
+	background-color: #343a40 !important;
+}
+
+.bg-light {
+	background-color: #f8f9fa !important;
+}
+
+.border-bottom,
+.border-top {
+	border-color: #dee2e6 !important;
+}
+
+.fixed-bottom {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+.text-white {
+	color: #fff !important;
+}
+
+.sidebar {
+	width: 250px;
+}
+
+.nav-link {
+	white-space: nowrap;
+}
+
+.modal-header {
+	background-color: #007bff;
+	color: white;
+	border-bottom: none;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.modal-content {
+	border-radius: 10px;
+}
+
+.modal-body .form-group {
+	margin-bottom: 15px;
+}
+
+.modal-body .form-control {
+	border-radius: 5px;
+}
+
+.modal-body .btn {
+	width: 100%;
+}
+
+.btn-close {
+	font-size: 1.2rem;
+	color: #fff;
+}
+
+.btn-close:hover,
+.btn-close:focus {
+	color: #ff0000;
+	text-shadow: none;
+	opacity: 1;
+}
+
+.invalid-feedback {
+	display: none;
+	width: 100%;
+	margin-top: .25rem;
+	font-size: .875em;
+	color: red;
+}
+
+.was-validated .form-control:valid {
+	border-color: #ced4da;
+	padding-right: calc(1.5em + .75rem);
+	background-image: none;
+}
+
+.time-slot {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8px;
+	margin-bottom: 8px;
+}
+
+.time-slot .btn {
+	margin-left: 12px;
+}
+
+.occupied {
+	background-color: #f8d7da;
+	color: #721c24;
+}
+
+.available {
+	background-color: #d4edda;
+	color: #155724;
+}
+
+#auto-complete {
+	border: 1px solid #86b7fe;
+	border-radius: 0.375rem;
+	background-color: #fff;
+	max-height: 200px;
+	overflow-y: auto;
+	box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+#auto-complete li {
+	padding: 0.75rem 1rem;
+	cursor: pointer;
+}
+
+#auto-complete li:hover,
+#auto-complete li:focus {
+	background-color: #e9ecef;
+	color: #495057;
+}
+
+#auto-complete li:not(:last-child) {
+	border-bottom: 1px solid #dee2e6;
+}
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-3 px-sm-2 px-0 bg-dark sidebar" id="sidebar"></div>
+            <div class="col p-0">
+                <div id="main-content">
+                    <h1>Dashboard</h1>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card card-primary">
+                                <div class="card-title">Total de Médicos</div>
+                                <div class="card-text" id="total-medicos">0</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card card-success">
+                                <div class="card-title">Total de Pacientes</div>
+                                <div class="card-text" id="total-pacientes">0</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card card-warning">
+                                <div class="card-title">Agendamentos Hoje</div>
+                                <div class="card-text" id="agendamentos-hoje">0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            $("#sidebar").load("/components/sidebar.html");
+          });
+    </script>
+    <script src="/index.js"></script>
+</body>
+
+</html>

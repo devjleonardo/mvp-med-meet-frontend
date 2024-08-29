@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Médico(a)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-3 px-sm-2 px-0 bg-dark sidebar" id="sidebar"></div>
+            <div class="col p-0">
+                <div id="main-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="d-flex align-items-center">
+                                        <h4 class="card-title">Cadastro de Médico(a)</h4>
+                                    </div>
+                                </div>
+                                <form id="formCadastroMedico" class="needs-validation" novalidate>
+                                    <div class="card-body">
+                                        <div class="row mb-4">
+                                            <div class="col-md-6">
+                                                <label for="nomeMedico">Nome <span style="color: red; font-weight: bold;">*</span></label>
+                                                <input id="nomeMedico" type="text" placeholder="Digite o nome do(a) médico(a)" class="form-control" required />
+                                                <div class="invalid-feedback">
+                                                    Por favor, informe o nome do(a) médico(a).
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="emailMedico">Email <span style="color: red; font-weight: bold;">*</span></label>
+                                                <input id="emailMedico" type="email" placeholder="Digite o email do(a) médico(a)" class="form-control" required />
+                                                <div class="invalid-feedback">
+                                                    Por favor, informe o email do(a) médico(a).
+                                                </div>
+                                                <div id="emailError" class="invalid-feedback" style="display: none;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label for="especialidadeMedico">Especialidade <span style="color: red; font-weight: bold;">*</span></label>
+                                                <input id="especialidadeMedico" type="text" placeholder="Digite a especialidade do(a) médico(a)" class="form-control" required />
+                                                <div class="invalid-feedback">
+                                                    Por favor, informe a especialidade do(a) médico(a).
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <label for="crmMedico">CRM <span style="color: red; font-weight: bold;">*</span></label>
+                                                <input id="crmMedico" type="text" placeholder="Digite o CRM do(a) médico(a)" maxlength="13" class="form-control" required />
+                                                <div class="invalid-feedback">
+                                                    Por favor, informe o CRM do(a) médico(a).
+                                                </div>
+                                                <div id="crmError" class="invalid-feedback" style="display: none;"></div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="duracaoConsultaMedico">Duração da Consulta (minutos) <span style="color: red; font-weight: bold;">*</span></label>
+                                                <input type="number" id="duracaoConsultaMedico" class="form-control" placeholder="Ex: 30" required />
+                                                <div class="invalid-feedback">
+                                                    Por favor, informe o a duração da consulto do(a) médico(a).
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4 mt-4">
+                                            <h4 class="card-title">Horários de Trabalho</h4>
+                                            <div id="horariosContainer"></div>
+                                            <button type="button" class="btn btn-primary mt-2" onclick="adicionarHorario()">
+                                                Adicionar Horário
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer text-right">
+                                        <button class="btn btn-danger me-4" type="button" onclick="window.history.back();">
+                                            Cancelar
+                                        </button>
+                                        <button class="btn btn-success" type="submit">Salvar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+              $("#sidebar").load("/components/sidebar.html");
+          });
+    </script>
+    <script src="/js/medicos/cadastro.js"></script>
+    <script src="/js/validacao.js"></script>
+</body>
+
+</html>

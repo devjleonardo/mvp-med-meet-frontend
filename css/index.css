@@ -1,0 +1,62 @@
+
+h1 {
+    margin: 10px;
+    color: #8c00ff;
+    font-weight: bold;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    flex: 1;
+}
+
+.card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: inherit;
+}
+
+.card-primary .card-title {
+    color: #08a1a7;
+    font-weight: bold;
+}
+
+.card-success .card-title {
+    color: #1ad145;
+    font-weight: bold;
+}
+
+.card-warning .card-title {
+    color: #8f07ff;
+    font-weight: bold;
+}
+
+.card-primary {
+    border-left: 5px solid #08a1a7;
+    color: #08a1a7;
+    font-weight: bold;
+}
+
+.card-success {
+    border-left: 5px solid #1ad145;
+    color: #1ad145;
+    font-weight: bold;
+}
+
+.card-warning {
+    border-left: 5px solid #8f07ff;
+    color: #8f07ff;
+    font-weight: bold;
+}
+

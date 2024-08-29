@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agendamentos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/components/listagem.js"></script>
+    <script src="/js/agendamentos/lista.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-autocomplete@2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-3 px-sm-2 px-0 bg-dark sidebar" id="sidebar"></div>
+            <div class="col p-0">
+                <div id="main-content">
+                    <div class="container">
+                        <div class="page-inner">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="d-flex align-items-center">
+                                                <h4 class="card-title">Agendamento de Consultas</h4>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="container">
+                                                <div class="row" id="medicos-container">
+                                                </div>
+                                                <div class="container" id="calendar-container" style="display:none;">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                                <h4 id="agenda-medico">Agenda do(a) Médico(a)</h4>
+                                                                <button class="btn btn-danger" onclick="fecharAgenda()">Fechar</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <h5 id="agenda-data"></h5>
+                                                            <div id="agenda-dia"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="agendamentoModal" tabindex="-1" aria-labelledby="agendamentoModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="agendamentoModalLabel">Agendar Consulta</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="formAgendamento">
+                                            <div class="mb-3 position-relative">
+                                                <label for="nomePaciente" class="form-label">Nome do Paciente</label>
+                                                <input type="text" class="form-control" id="nomePaciente" required placeholder="Digite o nome do paciente" autocomplete="off">
+                                                <ul id="auto-complete" class="list-group position-absolute w-100" style="z-index: 1000; display: none;"></ul>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="nomeMedico" class="form-label">Médico(a)</label>
+                                                <input type="text" class="form-control" id="nomeMedico" readonly>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="agendamentoData" class="form-label">Data e Horário</label>
+                                                <input type="text" class="form-control" id="agendamentoData" readonly>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-primary" onclick="confirmarAgendamento()">Confirmar Agendamento</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $("#sidebar").load("/components/sidebar.html");
+        });
+    </script>
+</body>
+
+</html>
